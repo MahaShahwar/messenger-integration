@@ -8,7 +8,7 @@ let router = express.Router();
 let initWebRoutes = (app)=> {
     router.get("/", homepageController.getHomePage);
     router.post("/webhook",chatfbController.postWebhook)
-    router.get("/messaging-webhook", chatfbController.getWebhook);
+    router.get("/webhook", chatfbController.getWebhook);
     //router.post("/webhook", homepageController.postWebhook);
     router.post("/set-up-profile", homepageController.handleSetupProfile);
     router.get("/set-up-profile", homepageController.getSetupProfilePage);
