@@ -4,6 +4,9 @@ let postWebhook = (req,res)=>{
         body.entry.forEach(element => {
             let webhook_event = element.messaging[0];
             console.log(webhook_event);
+        // Get the sender PSID
+        let sender_psid = webhook_event.sender.id;
+        console.log(sender_psid);
         });
         res.status(200).send("EVENT_RECEIVED");
       } else {
