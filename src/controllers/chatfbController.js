@@ -19,7 +19,7 @@ let postWebhook = (req,res)=>{
 }
 
 let getWebhook = (req,res)=>{
-    let mode = req.query["hub.mode"];
+  let mode = req.query["hub.mode"];
   let token = req.query["hub.verify_token"];
   let challenge = req.query["hub.challenge"];
   console.log("token");
