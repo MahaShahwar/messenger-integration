@@ -5,7 +5,7 @@ import chatfbController from "../controllers/chatfbController";
 let router = express.Router();
 
 let initWebRoutes = (app)=> {
-    //router.get("/", homepageController.getHomePage);
+    router.get("/", chatfbController.getHomepage);
     router.post("/webhook",chatfbController.postWebhook)
     router.get("/webhook", chatfbController.getWebhook);
     //router.post("/webhook", homepageController.postWebhook);

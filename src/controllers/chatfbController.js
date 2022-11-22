@@ -1,3 +1,7 @@
+let getHomepage = (req, res) => {
+  return res.render("homepage.ejs");
+};
+
 let postWebhook = (req,res)=>{
     let body = req.body;
     if (body.object === "page") {
@@ -30,6 +34,7 @@ let getWebhook = (req,res)=>{
 }
 
 module.exports={
+  getHomepage,
     postWebhook,
     getWebhook
 }
