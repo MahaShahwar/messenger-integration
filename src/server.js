@@ -20,5 +20,5 @@ initWebRoutes(app);
 let port = process.env.PORT || 8080;
 
 app.listen(port, () => {
-    console.log(`Messenger tech shop is running at the port ${port}`);
+    console.log(`Messenger app is running at the port ${port}`);
 });

@@ -1,7 +1,7 @@
 var request = require('request');
 let sendMessageOptions = (req,res)=>{
 
-    let msg = {
+    let sendMessage = {
         'method': 'POST',
         'url': `https://graph.facebook.com/v15.0/me/messages?access_token=${process.env.FACEBOOK_PAGE_ACCESS_TOKEN}`,
         'headers': {
@@ -15,28 +15,27 @@ let sendMessageOptions = (req,res)=>{
             "text": req.body.message
         }})
     }
-    let c;
-    request(msg, async (error, response) => {
+    let msgResponse;
+    let message;
+    request(sendMessage, async (error, response) => {
         if(error){
             console.log(error);
         }
-        c = JSON.parse(response.body);
-        // console.log(typeof c);
-        // console.log(c.message_id);
-        var message = {
+        msgResponse = JSON.parse(response.body);
+        var getMessage = {
             'method': 'GET',
-            'url': `https://graph.facebook.com/v13.0/${c.message_id}?fields=message&access_token=${process.env.FACEBOOK_PAGE_ACCESS_TOKEN}`,
+            'url': `https://graph.facebook.com/v13.0/${msgResponse.message_id}?fields=message&access_token=${process.env.FACEBOOK_PAGE_ACCESS_TOKEN}`,
           };
-          console.log('message',message);
-          request(message, function (error, response) {
+          request(getMessage, function (error, response) {
             if (error) throw new Error(error);
-            console.log(response.body);
-            res.send(response.body)
+            message=JSON.parse(response.body)
+            //console.log(response.body);
+            res.send(message.message)
           });
             // console.log(response);
             
     })
-    console.log('check',msg);
+    //console.log('check',msg);
 }
 module.exports={
     sendMessageOptions
