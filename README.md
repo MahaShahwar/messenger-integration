@@ -25,5 +25,8 @@
 - From page, open business suite, settings,new page experience, advanced messaging
 
 ![image](https://user-images.githubusercontent.com/55735054/203492040-ee5508b0-9e9d-4a24-8470-4cfc96b72dd5.png)
+![image](https://user-images.githubusercontent.com/55735054/203492447-8f92e8f3-909d-4cc1-b929-76a67afd746a.png)
+![image](https://user-images.githubusercontent.com/55735054/203492330-b1027bd7-fcf8-4c5d-bb1b-2366c2ba5e40.png)
+
 
 
